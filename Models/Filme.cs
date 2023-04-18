@@ -17,10 +17,11 @@ namespace MyDemosMVC.Models
         public DateTime DataLancamento { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z\u00C0-\u00FF""'\w-]*$")] //inicia com maiuscula, depois minuscula e aceita acentuação
+        [Required]
         public string? Genero { get; set; }
 
         [Range(1,1000)] //entre 1 e 1000
-        [Required(ErrorMessage ="Campo obrigatório")]
+        [Required(ErrorMessage ="O campo {0} obrigatório")]
         [Column(TypeName ="decimal(18,2)")] //tamanho maximo a ser criado no banco de dados
         public decimal Valor { get; set; }
 

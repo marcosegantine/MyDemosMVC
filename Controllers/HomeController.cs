@@ -5,8 +5,8 @@ using System.Diagnostics;
 namespace MyDemosMVC.Controllers
 {
     //sobrecarga de rotas
-    [Route("")] //ao definir uma rota vazia há conflito com a rota de erro.
-    [Route("gestao-clientes")] //altera a rota base para dominio/gestao-clientes
+    //[Route("")] //ao definir uma rota vazia há conflito com a rota de erro.
+    //[Route("gestao-clientes")] //altera a rota base para dominio/gestao-clientes
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -30,12 +30,12 @@ namespace MyDemosMVC.Controllers
                 Valor = 10000,
                 Avaliacao = 10
             };
-            return RedirectToAction("Privacy", filme); //redireciona a var filme para a acttion privacy
-            //return View();
+            //return RedirectToAction("Privacy", filme); //redireciona a var filme para a acttion privacy
+            return View();
         }
 
-        [Route("privacidade")]//acrescenta o endereço na rota base: dominio/gestao-clientes/privacidade
-        [Route("politica-de-privacidade")]
+        //[Route("privacidade")]//acrescenta o endereço na rota base: dominio/gestao-clientes/privacidade
+        //[Route("politica-de-privacidade")]
         public IActionResult Privacy(Filme filme)
         {
             if (ModelState.IsValid) //verifica se o model é valido
